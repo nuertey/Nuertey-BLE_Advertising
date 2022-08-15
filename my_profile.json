@@ -5,7 +5,7 @@
                    "-fmessage-length=0", "-fno-exceptions",
                    "-ffunction-sections", "-fdata-sections", "-funsigned-char",
                    "-MMD",
-                   "-fomit-frame-pointer", "-Os", "-DNDEBUG", "-g"],
+                   "-fomit-frame-pointer", "-Og", "-DMBED_DEBUG"],
         "asm": ["-c", "-x", "assembler-with-cpp"],
         "c": ["-c", "-std=gnu17"],
         "cxx": ["-c", "-std=gnu++14", "-Wvla"],
