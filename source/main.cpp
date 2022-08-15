@@ -191,27 +191,6 @@ private:
             return;
         }
 
-        // TBD Nuertey Odzeyem; an interesting open issue that I saw on 
-        // the Mbed examples that may or may not apply here when I get to 
-        // testing. Noting here so I keep it in mind:
-        //
-        // https://github.com/ARMmbed/mbed-os-example-ble/issues/351
-        //
-        // "I ended up finding this issue because I had the exact same 
-        // problem with my own service, so i figured I'd start with the 
-        // upstream examples to figure out if the problem was similar.
-        //
-        // I migrated my own code to use mbed-ble-utils ble_process.h 
-        // (with the queue dispatch_forever call commented out and now 
-        // it works again.
-        //
-        // I wonder if it has to do with advertising handle code:
-        //
-        // gap.setAdvertisingPayload(ble::LEGACY_ADVERTISING_HANDLE, _adv_data_builder.getAdvertisingData());
-        // vs:
-        // gap.setAdvertisingPayload(_adv_handle, _adv_data_builder.getAdvertisingData());
-        
-        // TBD Nuertey Odzeyem; remove the above comment once testing proves everything works.
         error = m_BluetoothLowEnergyStack.gap().setAdvertisingPayload(
                     ble::LEGACY_ADVERTISING_HANDLE,
                     m_AdvertisingDataBuilder.getAdvertisingData()
